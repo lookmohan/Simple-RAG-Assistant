@@ -1,25 +1,30 @@
 # Simple RAG Assistant
 
-A clean, beginner-friendly implementation of a **Retrieval-Augmented Generation (RAG)** system.
+A clean, beginner-friendly implementation of a **Retrieval-Augmented Generation (RAG)** system for document-based question answering.
 
-This project demonstrates how modern AI systems can **retrieve relevant information from documents** and use a **Large Language Model (LLM)** to generate accurate, grounded answers — instead of guessing.
+This project demonstrates how modern AI systems retrieve relevant information from documents and use a Large Language Model (LLM) to generate **accurate, grounded answers** instead of guessing. It is designed for learning, experimentation, and portfolio use.
 
-It is designed for **learning, experimentation, and portfolios**, not heavy production use.
+---
+
+## 📘 Ready Tensor Publication
+
+This project is officially published on Ready Tensor:
+
+🔗 https://app.readytensor.ai/publications/simple-rag-assistant-document-grounded-ai-for-question-answering-FAos5pUpSSAI
 
 ---
 
 ## 🎯 What Is This Project For?
 
-This project is built to show **how RAG works in practice**.
+This project helps you understand how RAG works in practice. It is useful if you want to:
 
-It is useful if you want to:
-- Learn **RAG fundamentals**
-- Understand **document-based question answering**
-- Build a **portfolio project** for jobs or internships
-- Experiment with **LLMs safely**
-- Create a **Kaggle or Colab notebook demo**
+- Learn Retrieval-Augmented Generation (RAG)
+- Understand document-based question answering
+- Build a portfolio project for jobs or internships
+- Experiment with LLMs safely
+- Create a Google Colab or Kaggle demo
 
-The system answers questions **only from your documents**, reducing hallucinations and improving reliability.
+The assistant answers questions **only from uploaded documents**, reducing hallucinations and improving reliability.
 
 ---
 
@@ -30,11 +35,11 @@ The system answers questions **only from your documents**, reducing hallucinatio
   - `.pdf`
   - `.docx`
 - Split documents into meaningful chunks
-- Convert text into **vector embeddings**
+- Convert text into vector embeddings
 - Store embeddings in a vector database
 - Retrieve the most relevant content for a query
-- Generate answers using an LLM **grounded in retrieved context**
-- Switch between LLM providers **without changing core logic**
+- Generate answers grounded in retrieved context
+- Switch between LLM providers without changing core logic
 
 ---
 
@@ -43,86 +48,98 @@ The system answers questions **only from your documents**, reducing hallucinatio
 - 📄 Document ingestion
 - 🔍 Semantic search using embeddings
 - 🤖 Retrieval-Augmented Generation
-- 🌍 Multiple LLM providers:
-- 🔒 Secure by design (no hardcoded keys)
+- 🌍 Multiple LLM providers
+- 🔒 Secure by design (no hardcoded API keys)
 - 🧪 Ideal for experimentation and learning
-- 📦 Works smoothly in Google Colab & Kaggle
+- 📦 Works smoothly in Google Colab and Kaggle
 
 ---
 
 ## 🔧 Supported LLM Providers
 
-The system is designed to work with different LLM APIs:
+The system supports multiple LLM APIs:
 
-- **OpenAI**
-- **Groq**
-- **Google Gemini**
+- OpenAI
+- Groq
+- Google Gemini
 
-The provider can be selected at runtime **without modifying the RAG pipeline**.
+The provider can be selected at runtime without modifying the RAG pipeline.
 
-> ⚠️ Model availability depends on API support and provider lifecycle.
-> The retrieval and grounding logic remains the same across providers.
+⚠️ Model availability depends on API support and provider lifecycle. The retrieval and grounding logic remains the same across providers.
 
 ---
 
 ## 🧠 How It Works (High Level)
 
-1. Documents are loaded from a folder
-2. Text is split into overlapping chunks
-3. Embeddings are created for each chunk
-4. Embeddings are stored in a vector database
-5. A user question retrieves the most relevant chunks
+1. Documents are loaded from a `data/` folder  
+2. Text is split into overlapping chunks  
+3. Embeddings are created for each chunk  
+4. Embeddings are stored in a vector database (ChromaDB)  
+5. A user question retrieves the most relevant chunks  
 6. The LLM generates an answer **only from retrieved content**
 
 This ensures:
-- Reduced hallucinations
-- Transparent reasoning
-- Document-grounded answers
+- Reduced hallucinations  
+- Transparent reasoning  
+- Document-grounded answers  
 
 ---
 
-## ▶️ Running on Google Colab
+## ▶️ Run on Google Colab
 
-This project runs smoothly on **Google Colab** with minimal setup.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/lookmohan/Simple-RAG-Assistant/blob/main/RAG_Implementation_v2.ipynb
+)
 
-### Step 1: Open Colab
-- Visit https://colab.research.google.com
-- Create a **New Notebook**
+---
+
+## 🛠️ Setup Instructions
+
+### Step 1: Open Google Colab
+Visit https://colab.research.google.com  
+Open the provided notebook or upload `RAG_Implementation_v2.ipynb`.
+
+---
 
 ### Step 2: Install Dependencies
-Run once:
 
-```python
-!pip install -q langchain chromadb sentence-transformers \
-               langchain-community langchain-openai \
-               langchain-groq langchain-google-genai \
-               pypdf docx2txt
+All required dependencies are listed in `requirements.txt`.
+
+Run once:
+```bash
+!pip install -q -r requirements.txt
 ````
+
+---
 
 ### Step 3: Upload Documents
 
-* Create a folder named `data/`
-* Upload your `.txt`, `.pdf`, or `.docx` files into it using the file panel
+1. Create a folder named `data/`
+2. Upload your `.txt`, `.pdf`, or `.docx` files using the file panel
+
+---
 
 ### Step 4: Choose an LLM Provider
 
-You can select:
+Supported providers:
 
 * OpenAI
 * Groq
 * Google Gemini
 
-API keys should be provided securely (never hardcoded).
+Provide API keys securely using environment variables (never hardcode keys).
+
+---
 
 ### Step 5: Ask Questions
 
-Once documents are loaded and indexed, ask questions like:
+After documents are indexed, ask questions like:
 
 * “What is NLP?”
 * “Explain embeddings from the documents”
 * “Summarize the uploaded files”
 
-The assistant will respond **only using your documents**.
+The assistant responds **only using your documents**.
 
 ---
 
@@ -131,7 +148,7 @@ The assistant will respond **only using your documents**.
 * Not optimized for large-scale production
 * Requires valid API keys
 * Model availability may change
-* Focused on educational use
+* Designed mainly for educational and portfolio use
 
 ---
 
@@ -140,3 +157,7 @@ The assistant will respond **only using your documents**.
 This project is shared for educational and personal use.
 
 ---
+
+## 🙌 Acknowledgements
+
+This project uses open-source tools such as **LangChain**, **ChromaDB**, and **sentence-transformers** to demonstrate Retrieval-Augmented Generation in a simple and understandable way.
