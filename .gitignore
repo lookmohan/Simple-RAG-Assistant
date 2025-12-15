@@ -1,0 +1,8 @@
+__pycache__/
+.env
+.env.*
+*.db
+.ipynb_checkpoints/
+chroma/
+data/*
+!data/README.md
