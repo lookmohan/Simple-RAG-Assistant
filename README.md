@@ -157,7 +157,8 @@ The assistant responds **only using your documents**.
 This project is shared for educational and personal use.
 
 ---
-img src="https://t.bkit.co/w_69553c5bebadc.gif" />
+
+<img src="https://t.bkit.co/w_69553c5bebadc.gif" />
 
 ## 🙌 Acknowledgements
 
